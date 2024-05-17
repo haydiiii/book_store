@@ -1,8 +1,7 @@
 import 'package:book_store/core/constants/iamge_assets.dart';
 import 'package:book_store/core/functions/routing.dart';
-import 'package:book_store/core/utils/colors.dart';
 import 'package:book_store/core/utils/text_style.dart';
-import 'package:book_store/features/auth/login/login_view.dart';
+import 'package:book_store/features/auth/login/presentation/view/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -32,7 +31,7 @@ class _SplshViewState extends State<SplshView> {
         Lottie.asset(ImagesAssets.image1),
         Text(
           'Welcome to Book Store',
-          style: getTitleStyle(color: AppColors.black),
+          style: getTitleStyle(),
         )
       ],
     )));

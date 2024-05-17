@@ -9,7 +9,7 @@ TextStyle getTitleStyle({
   return TextStyle(
     fontSize: fontsize ?? 20,
     fontWeight: fontWeight ?? FontWeight.bold,
-    color: color ?? AppColors.primaryColor,
+    color: color ?? AppColors.greyColor,
   );
 }
 
