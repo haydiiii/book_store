@@ -1,15 +1,13 @@
 class EndPoints {
-  static String baseUrl = 'https://codingarabic.online/api/';
-  static String login = 'login';
-}
-class ApiKeys{
+  static String baseUrl = 'https://codingarabic.online/api';
+  static String login = '/login';
+  static String register = '/register';
+  static String profile = '/profile';
 
-  static String status = 'status';
-  static String errorMessage = 'error';
-  static String message = 'message';
-  static String id = 'id';
-  static String token = 'token';
-  static String email = 'email';
-  static String password = 'password';  
-
+  static String updateProfile = '/update-profile';
+  static String slider = '/sliders';
+  static String bestSeller = '/products-bestseller';
+  static String newArrivals = '/products-new-arrivals';
+  static String categories = '/categories';
+  static String products = '/products';
 }

@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
               backgroundColor: AppColors.black),
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             'Login',
             style: getBodyStyle(fontsize: 18, color: AppColors.white),

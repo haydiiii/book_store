@@ -1,29 +1,26 @@
 import 'package:book_store/core/cache/cache_helper.dart';
 import 'package:book_store/core/services/dio_helper/dio_helper.dart';
-import 'package:book_store/features/manager/user_cubit.dart';
 import 'package:book_store/splash_view.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
-  //DioHelper.init();
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  CacheHelper().init();
-  runApp(const MainApp());
+  DioHelper.init();
+  await CacheHelper.init();
+  String? token = CacheHelper.getDataString(key: 'token');
+  print('token is $token');
+  runApp(MainApp(token: token));
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  final String? token;
+  const MainApp({super.key, this.token});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) {
-        return UserCubit(DioHelper(dio: Dio()));
-      },
-      child: const MaterialApp(
-          debugShowCheckedModeBanner: false, home: SplshView()),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: SplshView(token: token),
     );
   }
 }
